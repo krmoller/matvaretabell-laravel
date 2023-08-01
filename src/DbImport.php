@@ -22,9 +22,6 @@ class DbImport
         $model = config('matvaretabell.model');
         $updateOrInsertArg = config('matvaretabell.properties');
         $updateOrInsertArg['matvare_id'] = $food['matvare_id'];
-        foreach (config('matvaretabell.properties') as $key => $value) {
-            $food[$key] = $value;
-        }
 
         return $model::updateOrInsert(
                 $updateOrInsertArg,
