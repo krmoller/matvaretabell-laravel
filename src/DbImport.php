@@ -24,11 +24,9 @@ class DbImport
         foreach (config('matvaretabell.properties') as $key => $value) {
             $food[$key] = $value;
         }
-//        $food['updated_at'] = date('Y-m-d h:i:s');
 
         return $model::updateOrInsert(
-                ['matvare_id' => $food['matvare_id'],
-                    ],
+                $updateOrInsertArg,
                 $food);
     }
 
