@@ -21,10 +21,12 @@ Add the following to the root composer.json:
 Run ```composer update```
 
 
-Publish the config files:
+Publish the config file:
 ```
 php artisan vendor:publish --provider="Krmoller\Matvaretabell\MatvaretabellServiceProvider"
 ```
+
+In the config file you can set up the columns to import from the file.
 
 Use it in your app:
 ```php
