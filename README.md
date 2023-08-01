@@ -38,7 +38,7 @@ function importTable() : array
 }
 ```
 
-If you only want an array with the data and not import it to the database:
+If you only want an array with the data without importing it into the database:
 ```php
 use Krmoller\Matvaretabell\Matvaretabell;
 
