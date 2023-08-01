@@ -1,0 +1,25 @@
+{
+    "name": "krmoller/matvaretabell-laravel",
+    "description": "@Imports matportalen.no food nutrients table to a Laravel model",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "autoload": {
+        "psr-4": {
+            "Krmoller\\Matvaretabell\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Krmoller\\Matvaretabell\\MatvaretabellServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Kim Møller",
+            "email": "kim@moller-it.no"
+        }
+    ]
+}
