@@ -26,4 +26,27 @@ Publish the config files:
 php artisan vendor:publish --provider="Krmoller\Matvaretabell\MatvaretabellServiceProvider"
 ```
 
+Use it in your app:
+```php
+use Krmoller\Matvaretabell\Matvaretabell;
+
+function importTable() : array
+{
+    $inputFileName = Storage::path('public/matvarer.xlsx');
+    return Matvaretabell::ImportToDB($inputFileName);
+
+}
+```
+
+If you only want an array with the data and not import it to the database:
+```php
+use Krmoller\Matvaretabell\Matvaretabell;
+
+function importTable() : array
+{
+    $inputFileName = Storage::path('public/matvarer.xlsx');
+    return Matvaretabell::getFoods($inputFileName);
+
+}
+```
 
