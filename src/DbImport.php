@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 class DbImport
 {
 
+    // Imports the file into the database
     public static function import(array $foods) : array
     {
         foreach ($foods as $food) {
