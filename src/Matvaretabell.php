@@ -10,9 +10,21 @@ class Matvaretabell
 {
 
     /**
+     * Reads a xlsx file, transforms its content into an array and imports it into a model.
+     *
+     * @param string $filePath The path to the matvaretabell file
+     * @return array The xlsx content as an array
+     * @throws Exception if the file can't be read
+     */
+    public static function ImportToDB(string $filePath) : array
+    {
+        return DbImport::import(self::getFoods($filePath));
+    }
+
+    /**
      * Reads a xlsx file and transforms its content into an array.
      *
-     * @param string $filePath
+     * @param string $filePath The path to the matvaretabell file
      * @return array The xlsx content as an array
      * @throws Exception if the file can't be read
      */

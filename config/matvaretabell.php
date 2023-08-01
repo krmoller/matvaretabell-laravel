@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'model' => 'App\\Models\\Food',
+    'model' => 'App\Models\Food',
     'properties' => [
         'type' => 'global',
         'source_id' => '1',

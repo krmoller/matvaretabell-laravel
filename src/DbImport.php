@@ -19,13 +19,16 @@ class DbImport
     private static function update(array $food)
     {
         $model = config('matvaretabell.model');
-        $food['type'] = 'global';
-        $food['source_id'] = 1;
-        $food['source_type'] = 'App\Models\App';
+        $updateOrInsertArg = config('matvaretabell.properties');
+        $updateOrInsertArg['matvare_id'] = $food['matvare_id'];
+        foreach (config('matvaretabell.properties') as $key => $value) {
+            $food[$key] = $value;
+        }
 //        $food['updated_at'] = date('Y-m-d h:i:s');
 
         return $model::updateOrInsert(
-                ['matvare_id' => $food['matvare_id']],
+                ['matvare_id' => $food['matvare_id'],
+                    ],
                 $food);
     }
 
